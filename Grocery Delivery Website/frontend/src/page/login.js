@@ -54,9 +54,9 @@ const Login = () => {
         dispatch(loginRedux(dataRes));
         setTimeout(() => {
           navigate("/");
+          console.log(userData);
         }, 1000);
       }
-      console.log(userData);
     } else {
       alert("Please enter requires field");
     }
