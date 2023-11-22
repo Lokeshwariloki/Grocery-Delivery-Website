@@ -49,16 +49,18 @@ const Login = () => {
       );
       const dataRes = await fetchData.json();
       console.log(dataRes);
-      toast(dataRes.message);
+
       if (dataRes.alert) {
         dispatch(loginRedux(dataRes));
         setTimeout(() => {
           navigate("/");
           console.log(userData);
         }, 1000);
+      } else {
+        toast(dataRes.message);
       }
     } else {
-      alert("Please enter requires field");
+      alert("Please enter required fields");
     }
   };
   return (
